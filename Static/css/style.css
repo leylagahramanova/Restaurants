@@ -83,11 +83,15 @@ button {
 .item-details {
   flex: 1;
 }
-
+ul {
+  list-style-type: none;
+}
 .primary {
   font-size: 30px;
 }
-
+#basket:{
+  mrgin-bottom:30px;
+}
 .secondary-text {
   color: #777;
   font-size: 18px;
@@ -124,6 +128,15 @@ button {
     text-decoration: none;
   }
   
+  .banner__name2{
+    
+    margin:100px;
+    font-size:2rem;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+  }
    header li a:hover:not(.active) {
     background-color: #111;
   }

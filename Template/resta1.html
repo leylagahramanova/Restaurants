@@ -85,235 +85,278 @@
                 </div>
             </form>
         </main>
-        <div id="burger-container" class="burger-container">
-            <h2>Most Popular <br>Burger Items</h2>
-            <br>
-<label onclick="filterSelection('all')" class="one active" for="all">All</label>
-<label onclick="filterSelection('french')" class="one " for="french">French</label>
-<label onclick="filterSelection('american')" class="one " for="american">American</label>
-<label onclick="filterSelection('italian')" class="one" for="italian">Italian</label>
-<label onclick="filterSelection('bangla')" class="one" for="bangla">Bangla</label>
-<label onclick="filterSelection('chinese')" class="one " for="chinese">Chinese</label>
-<br>
-<ul class="list" id="menu">
-               
-                <li class="list-item american">
 
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
-                            <span class="primary">Knuckle Burger</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
-                                </button>
-                        </div>
+        <section class="banner__name2">
+            <div class="conteiner ">
+                <div class="card">
+                    <div id="basket">
+                        <h2>Basket</h2>
+                        <ul id="basket-list"></ul>
+                        <h3>Total Cost: $<span id="total-cost">0</span></h3>
+                        <h3>Ball: <span id="ball">0</span></h3>
                     </div>
-                    <hr>
-                </li>
-                <li class="list-item italian">
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
-                            <span class="primary">Bean Burger</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
-                                </button>
-                        </div>
-                    </div>
-                    <hr>
-                </li>
-                <li class="list-item bangla">
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
+                </div>
+            </div>
+            <div id="burger-container" class="burger-container">
+                <h2>Most Popular <br>Burger Items</h2>
+                <br>
+                <label onclick="filterSelection('all')" class="one active" for="all">All</label>
+                <label onclick="filterSelection('french')" class="one " for="french">French</label>
+                <label onclick="filterSelection('american')" class="one " for="american">American</label>
+                <label onclick="filterSelection('italian')" class="one" for="italian">Italian</label>
+                <label onclick="filterSelection('bangla')" class="one" for="bangla">Bangla</label>
+                <label onclick="filterSelection('chinese')" class="one " for="chinese">Chinese</label>
+                <br>
+                <ul class="list" id="menu">
 
-                            <span class="primary">Bistro Burger</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
+                    <li class="list-item american">
+
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+                                <span class="primary">Knuckle Burger</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
                                 </button>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                </li>
-                <li class="list-item chinese">
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
-                            <span class="primary">Buzz Burgers</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
+                        <hr>
+                    </li>
+
+                    <li class="list-item italian">
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+                                <span class="primary">Bean Burger</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
                                 </button>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                </li>
-                <li class="list-item bangla">
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
-                            <span class="primary">Smockin' Burgers</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
+                        <hr>
+                    </li>
+                    <li class="list-item bangla">
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+
+                                <span class="primary">Bistro Burger</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
                                 </button>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                </li>
-                <li class="list-item american">
-                    <div class="list-item-content">
-                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
-                        <div class="item-details">
-                            <span class="primary">Cheeseburger</span>
-                            <span class="secondary-text">$20</span>
-                            <button data-cart type="button" class="btn btn-block btn-outline-warning">
-                                + in busket
+                        <hr>
+                    </li>
+                    <li class="list-item chinese">
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+                                <span class="primary">Buzz Burgers</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
                                 </button>
+                            </div>
                         </div>
-                    </div>
-                    <hr>
-                </li>
-                <!-- Repeat list items as needed -->
-            </ul>
-        </div>
-        <div id="basket">
-            <h2>Basket</h2>
-            <ul id="basket-list"></ul>
-            <p>Total Cost: $<span id="total-cost">0</span></p>
-        </div>
+                        <hr>
+                    </li>
+                    <li class="list-item bangla">
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+                                <span class="primary">Smockin' Burgers</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </li>
+                    <li class="list-item american">
+                        <div class="list-item-content">
+                            <img class="avatar"
+                                src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                                alt="Customer Image">
+                            <div class="item-details">
+                                <span class="primary">Cheeseburger</span>
+                                <span class="secondary-text">$20</span>
+                                <button data-cart type="button" class="btn btn-block btn-outline-warning">
+                                    + in busket
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                    </li>
+                    <!-- Repeat list items as needed -->
+                </ul>
+            </div>
+        </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Store the initial dropdown options
-            var timeSlotOptions = $('#time-slot-dropdown').html();
-            var insideTablesOptions = $('#inside-tables-dropdown').html();
-            var outsideTablesOptions = $('#outside-tables-dropdown').html();
-    
             $('#date').on('change', function () {
-                // Reset dropdown options to the initial state
-                $('#time-slot-dropdown').html(timeSlotOptions);
-                $('#inside-tables-dropdown').html(insideTablesOptions);
-                $('#outside-tables-dropdown').html(outsideTablesOptions);
-    
                 $('#time-slot-dropdown').prop('disabled', false);
                 $('#inside-tables-dropdown, #outside-tables-dropdown').prop('disabled', true);
                 $('#next-btn').prop('disabled', true);
             });
-    
+
             $('#time-slot-dropdown').on('change', function () {
-                // Reset dropdown options
-                $('#inside-tables-dropdown').html(insideTablesOptions);
-                $('#outside-tables-dropdown').html(outsideTablesOptions);
-    
                 $('#inside-tables-dropdown, #outside-tables-dropdown').prop('disabled', false);
                 $('#next-btn').prop('disabled', false);
             });
-    
+
             $('#choose-btn').on('click', function () {
                 var selectedDate = $('#date').val();
                 var selectedTimeSlot = $('#time-slot-dropdown').val();
                 var selectedInsideTable = $('#inside-tables-dropdown').val();
                 var selectedOutsideTable = $('#outside-tables-dropdown').val();
-    
-                // Check if the selected date has available time slots
-                const hasAvailableTimeSlots = reservations.some((reservation) => {
+
+                const availableTimeSlots = reservations.filter((reservation) => {
                     return reservation.date === selectedDate;
-                });
-    
-                // Check if the selected time slot has available tables
-                const hasAvailableTables = reservations.some((reservation) => {
+                }).map((reservation) => reservation.timeSlot);
+
+                const availableTables = reservations.filter((reservation) => {
                     return reservation.date === selectedDate && reservation.timeSlot === selectedTimeSlot;
-                });
-    
-                // Update dropdowns based on availability
-                const timeSlotDropdown = $('#time-slot-dropdown');
-                const insideTablesDropdown = $('#inside-tables-dropdown');
-                const outsideTablesDropdown = $('#outside-tables-dropdown');
-    
-                if (!hasAvailableTimeSlots) {
-                    // No available time slots, set to empty
-                    timeSlotDropdown.val('').prop('disabled', true);
+                }).map((reservation) => ({
+                    insideTable: reservation.insideTable,
+                    outsideTable: reservation.outsideTable,
+                }));
+
+                const timeSlotDropdown = document.getElementById('time-slot-dropdown');
+                const insideTablesDropdown = document.getElementById('inside-tables-dropdown');
+                const outsideTablesDropdown = document.getElementById('outside-tables-dropdown');
+
+                timeSlotDropdown.innerHTML = '';
+                insideTablesDropdown.innerHTML = '';
+                outsideTablesDropdown.innerHTML = '';
+
+                if (availableTimeSlots.length === 0) {
+                    const option = document.createElement('option');
+                    option.text = 'Select';
+                    timeSlotDropdown.appendChild(option);
                 } else {
-                    // Populate available time slots
-                    timeSlotDropdown.prop('disabled', false);
+                    availableTimeSlots.forEach((slot) => {
+                        const option = document.createElement('option');
+                        option.value = slot;
+                        option.text = slot;
+                        timeSlotDropdown.appendChild(option);
+                    });
                 }
-    
-                if (!hasAvailableTables) {
-                    // No available tables, set to empty
-                    insideTablesDropdown.val('').prop('disabled', true);
-                    outsideTablesDropdown.val('').prop('disabled', true);
+
+                if (availableTables.length === 0) {
+                    const option = document.createElement('option');
+                    option.text = 'Select';
+                    insideTablesDropdown.appendChild(option);
+                    outsideTablesDropdown.appendChild(option.cloneNode(true));
                 } else {
-                    // Populate available tables for the selected time slot
-                    insideTablesDropdown.prop('disabled', false);
-                    outsideTablesDropdown.prop('disabled', false);
+                    availableTables.forEach((tables) => {
+                        const insideOption = document.createElement('option');
+                        insideOption.value = tables.insideTable;
+                        insideOption.text = tables.insideTable;
+                        insideTablesDropdown.appendChild(insideOption);
+
+                        const outsideOption = document.createElement('option');
+                        outsideOption.value = tables.outsideTable;
+                        outsideOption.text = tables.outsideTable;
+                        outsideTablesDropdown.appendChild(outsideOption);
+                    });
                 }
-    
-                // Make an AJAX request to update the table status in the backend
+
+                // Make an AJAX request to delete the selected table from the database
                 $.ajax({
-                    url: '/restaurant/update-table-status/',
+                    url: '/restaurant/delete-table/',
                     type: 'POST',
                     data: {
                         'date': selectedDate,
                         'time_slot': selectedTimeSlot,
-                        'inside_table': selectedInsideTable,
-                        'outside_table': selectedOutsideTable,
-                        'status': 'booked', // You can adjust the status as needed
+                        'inside_table': selectedInsideTable !== '' ? parseInt(selectedInsideTable) : null,
+                        'outside_table': selectedOutsideTable !== '' ? parseInt(selectedOutsideTable) : null,
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function (response) {
-                        console.log('Table status updated successfully');
+                        console.log('Table deleted successfully');
+                        // Redirect to the /restaurant/ URL
                         window.location.href = '/restaurant/';
                     },
                     error: function (error) {
-                        console.error('Error updating table status:', error);
+                        console.error('Error deleting table:', error);
                     }
                 });
+
             });
         });
+
+
     </script>
     <script>
         // JavaScript to handle adding items to the basket and calculating the total cost
         const menu = document.getElementById('menu');
-        const basketList = document.getElementById('basket-list');
-        const totalCost = document.getElementById('total-cost');
+const basketList = document.getElementById('basket-list');
+const totalCost = document.getElementById('total-cost');
+const ball = document.getElementById('ball');
 
-        let basketItems = [];
+// Assuming totalCost is a string, convert it to a number
+const totalCostValue = parseFloat(totalCost.textContent);
 
-        menu.addEventListener('click', function(event) {
-            if (event.target.classList.contains('list-item')) {
-                const itemDetails = event.target.querySelector('.item-details');
-                const itemName = itemDetails.querySelector('.primary').textContent;
-                const itemPrice = parseFloat(itemDetails.querySelector('.secondary-text').textContent.slice(1));
+// Check if totalCost is a valid number
+if (!isNaN(totalCostValue)) {
+  ball.textContent = (totalCostValue / 10).toFixed(2); // Use toFixed to format the result with two decimal places
+} else {
+  console.error("Total cost is not a valid number");
+}
 
-                basketItems.push({ name: itemName, price: itemPrice });
-                updateBasket();
-            }
-        });
+let basketItems = [];
 
-        function updateBasket() {
-            // Clear the basket list
-            basketList.innerHTML = '';
+menu.addEventListener('click', function (event) {
+  if (event.target.getAttribute('data-cart') !== null) {
+    const listItem = event.target.closest('.list-item');
+    const itemDetails = listItem.querySelector('.item-details');
+    const itemName = itemDetails.querySelector('.primary').textContent;
+    const itemPrice = parseFloat(itemDetails.querySelector('.secondary-text').textContent.slice(1));
 
-            // Calculate the total cost
-            let total = 0;
-            basketItems.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-                basketList.appendChild(listItem);
+    basketItems.push({ name: itemName, price: itemPrice });
+    updateBasket();
+  }
+});
 
-                total += item.price;
-            });
+function updateBasket() {
+  // Clear the basket list
+  basketList.innerHTML = '';
 
-            // Update the total cost in the basket
-            totalCost.textContent = total.toFixed(2);
-        }
+  // Calculate the total cost
+  let total = 0;
+  basketItems.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    basketList.appendChild(listItem);
+
+    total += item.price;
+  });
+
+  // Update the total cost in the basket
+  totalCost.textContent = total.toFixed(2);
+
+  // Update the ball value
+  ball.textContent = (total / 10).toFixed(2);
+}
     </script>
-     <script>
+    <script>
         // JavaScript for filtering burger items
         function filterSelection(category) {
             var items = document.querySelectorAll('.list-item');
@@ -335,11 +378,11 @@
             }
         }
         $(document).ready(function () {
-  
-  $(".one").click(function (){
-    $(this).addClass("active").siblings().removeClass("active");
-  });
-});
+
+            $(".one").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+        });
 
     </script>
 </body>
