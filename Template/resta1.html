@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
+<body>
+    <header>
+        <div class="logo"><a href="#home">Home</a></div>
+        <ul>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+            <li>
+                <a href="#">Welcome, {{user.username}}</a>
+            </li>
+            {% else %}
+            <li><a href="/login">Login</a></li>
+
+            {% endif %}
+        </ul>
+    </header>
+    <div class="banner">
+
+        <main id="main" class="container">
+            <form id="survey-form">
+                <div id="when" class="gimme-space">
+                    <div id="info">
+                        <h2>Make a reservation:</h2>
+                        <label for="input1">Choose a date:</label>
+                        <input type="date" {% for el in reservations %} value="{{ el.date }}" {% endfor %} id="date"
+                            name="date" required>
+
+                        <div id="view">
+                            <label>Time Slot</label>
+                            <select id="time-slot-dropdown" disabled>
+                                <option value="">Select</option>
+                                {% for el in reservations %}
+                                <option value="{{ empty_table.time_slot }}">
+                                    {% for empty_table in el.empty_tables.all %}
+                                    {{ empty_table.time_slot }}
+                                    {% endfor %}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <label for="input1">Choose a table:</label>
+                        <div class="table">
+                            <div id="view">
+                                <label>Inside</label>
+                                <select id="inside-tables-dropdown" disabled>
+                                    <option value="">Select</option>
+                                    {% for el in reservations %}
+                                    <option value="{{ empty_table.num_empty_tables_inside }}">
+                                        {% for empty_table in el.empty_tables.all %}
+                                        {{ empty_table.num_empty_tables_inside }}
+                                        {% endfor %}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div id="view">
+                                <label>Out</label>
+                                <select id="outside-tables-dropdown" disabled>
+                                    <option value="">Select</option>
+                                    {% for el in reservations %}
+                                    <option value="{{ empty_table.num_empty_tables_outside }}">
+                                        {% for empty_table in el.empty_tables.all %}
+                                        {{ empty_table.num_empty_tables_outside }}
+                                        {% endfor %}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <button id="choose-btn">Choose</button>
+                </div>
+            </form>
+        </main>
+        <div id="burger-container" class="burger-container">
+            <h2>Most Popular <br>Burger Items</h2>
+            <br>
+<label onclick="filterSelection('all')" class="one active" for="all">All</label>
+<label onclick="filterSelection('french')" class="one " for="french">French</label>
+<label onclick="filterSelection('american')" class="one " for="american">American</label>
+<label onclick="filterSelection('italian')" class="one" for="italian">Italian</label>
+<label onclick="filterSelection('bangla')" class="one" for="bangla">Bangla</label>
+<label onclick="filterSelection('chinese')" class="one " for="chinese">Chinese</label>
+<br>
+<ul class="list" id="menu">
+               
+                <li class="list-item american">
+
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+                            <span class="primary">Knuckle Burger</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li class="list-item italian">
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+                            <span class="primary">Bean Burger</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li class="list-item bangla">
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+
+                            <span class="primary">Bistro Burger</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li class="list-item chinese">
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+                            <span class="primary">Buzz Burgers</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li class="list-item bangla">
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+                            <span class="primary">Smockin' Burgers</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li class="list-item american">
+                    <div class="list-item-content">
+                        <img class="avatar" src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Customer Image">
+                        <div class="item-details">
+                            <span class="primary">Cheeseburger</span>
+                            <span class="secondary-text">$20</span>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <!-- Repeat list items as needed -->
+            </ul>
+        </div>
+        <div id="basket">
+            <h2>Basket</h2>
+            <ul id="basket-list"></ul>
+            <p>Total Cost: $<span id="total-cost">0</span></p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Store the initial dropdown options
+            var timeSlotOptions = $('#time-slot-dropdown').html();
+            var insideTablesOptions = $('#inside-tables-dropdown').html();
+            var outsideTablesOptions = $('#outside-tables-dropdown').html();
+    
+            $('#date').on('change', function () {
+                // Reset dropdown options to the initial state
+                $('#time-slot-dropdown').html(timeSlotOptions);
+                $('#inside-tables-dropdown').html(insideTablesOptions);
+                $('#outside-tables-dropdown').html(outsideTablesOptions);
+    
+                $('#time-slot-dropdown').prop('disabled', false);
+                $('#inside-tables-dropdown, #outside-tables-dropdown').prop('disabled', true);
+                $('#next-btn').prop('disabled', true);
+            });
+    
+            $('#time-slot-dropdown').on('change', function () {
+                // Reset dropdown options
+                $('#inside-tables-dropdown').html(insideTablesOptions);
+                $('#outside-tables-dropdown').html(outsideTablesOptions);
+    
+                $('#inside-tables-dropdown, #outside-tables-dropdown').prop('disabled', false);
+                $('#next-btn').prop('disabled', false);
+            });
+    
+            $('#choose-btn').on('click', function () {
+                var selectedDate = $('#date').val();
+                var selectedTimeSlot = $('#time-slot-dropdown').val();
+                var selectedInsideTable = $('#inside-tables-dropdown').val();
+                var selectedOutsideTable = $('#outside-tables-dropdown').val();
+    
+                // Check if the selected date has available time slots
+                const hasAvailableTimeSlots = reservations.some((reservation) => {
+                    return reservation.date === selectedDate;
+                });
+    
+                // Check if the selected time slot has available tables
+                const hasAvailableTables = reservations.some((reservation) => {
+                    return reservation.date === selectedDate && reservation.timeSlot === selectedTimeSlot;
+                });
+    
+                // Update dropdowns based on availability
+                const timeSlotDropdown = $('#time-slot-dropdown');
+                const insideTablesDropdown = $('#inside-tables-dropdown');
+                const outsideTablesDropdown = $('#outside-tables-dropdown');
+    
+                if (!hasAvailableTimeSlots) {
+                    // No available time slots, set to empty
+                    timeSlotDropdown.val('').prop('disabled', true);
+                } else {
+                    // Populate available time slots
+                    timeSlotDropdown.prop('disabled', false);
+                }
+    
+                if (!hasAvailableTables) {
+                    // No available tables, set to empty
+                    insideTablesDropdown.val('').prop('disabled', true);
+                    outsideTablesDropdown.val('').prop('disabled', true);
+                } else {
+                    // Populate available tables for the selected time slot
+                    insideTablesDropdown.prop('disabled', false);
+                    outsideTablesDropdown.prop('disabled', false);
+                }
+    
+                // Make an AJAX request to update the table status in the backend
+                $.ajax({
+                    url: '/restaurant/update-table-status/',
+                    type: 'POST',
+                    data: {
+                        'date': selectedDate,
+                        'time_slot': selectedTimeSlot,
+                        'inside_table': selectedInsideTable,
+                        'outside_table': selectedOutsideTable,
+                        'status': 'booked', // You can adjust the status as needed
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function (response) {
+                        console.log('Table status updated successfully');
+                        window.location.href = '/restaurant/';
+                    },
+                    error: function (error) {
+                        console.error('Error updating table status:', error);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        // JavaScript to handle adding items to the basket and calculating the total cost
+        const menu = document.getElementById('menu');
+        const basketList = document.getElementById('basket-list');
+        const totalCost = document.getElementById('total-cost');
+
+        let basketItems = [];
+
+        menu.addEventListener('click', function(event) {
+            if (event.target.classList.contains('list-item')) {
+                const itemDetails = event.target.querySelector('.item-details');
+                const itemName = itemDetails.querySelector('.primary').textContent;
+                const itemPrice = parseFloat(itemDetails.querySelector('.secondary-text').textContent.slice(1));
+
+                basketItems.push({ name: itemName, price: itemPrice });
+                updateBasket();
+            }
+        });
+
+        function updateBasket() {
+            // Clear the basket list
+            basketList.innerHTML = '';
+
+            // Calculate the total cost
+            let total = 0;
+            basketItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                basketList.appendChild(listItem);
+
+                total += item.price;
+            });
+
+            // Update the total cost in the basket
+            totalCost.textContent = total.toFixed(2);
+        }
+    </script>
+     <script>
+        // JavaScript for filtering burger items
+        function filterSelection(category) {
+            var items = document.querySelectorAll('.list-item');
+
+            items.forEach(function (item) {
+                item.style.display = 'none';
+            });
+
+            if (category === 'all') {
+                items.forEach(function (item) {
+                    item.style.display = 'block';
+                });
+            } else {
+                var filteredItems = document.querySelectorAll('.list-item.' + category);
+
+                filteredItems.forEach(function (item) {
+                    item.style.display = 'block';
+                });
+            }
+        }
+        $(document).ready(function () {
+  
+  $(".one").click(function (){
+    $(this).addClass("active").siblings().removeClass("active");
+  });
+});
+
+    </script>
+</body>
+
+</html>

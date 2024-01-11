@@ -1,0 +1,64 @@
+{% block content %} 
+<style>
+    /* Style for the registration form */
+    .container {
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 50%;
+        margin: 150 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="password"],
+    button {
+        margin-top:10px;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+    button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        width:50%;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .text-center {
+        text-align: center;
+    }
+</style>
+<!-- Register -->
+<div class="container py-5">
+    <h1>Register</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ register_form }}
+        <br>                    
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
